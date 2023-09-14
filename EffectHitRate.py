@@ -27,11 +27,32 @@ while True:
         elif choice == '2':
 
             baseSPD=math.ceil(int(input("The speed of your character(without relics) :")))
-            SPDpercent=math.ceil(int(input("The speed percent from relics or buffs: ")))
+            SPDpercent=math.ceil(int(input("The speed multiplyer ( percent ) from relics or buffs: ")))
             FlatSPD=math.ceil(int(input("The speed from relics( flat speed without percentage) : ")))
+            print("\n\n\n")
             Speed = math.ceil(baseSPD*((100+SPDpercent)/100)+FlatSPD)
             print("speed : ", Speed)
+
+            BAV=10000/Speed
+            print("Base Action Value : ", BAV ,"\n\n\n")
+
+            MovePerRound=BAV/100
+            print("average move per round :" , MovePerRound)
         
+        elif choice == '3':
+            print("reference : https://gameloid.com/speed-in-honkai-star-rail-how-to-calculate-and-increase/\n\n ")
+            baseSPD=math.ceil(int(input("The speed of your character(without relics) :")))
+            SPDpercent=math.ceil(int(input("The speed multiplyer ( percent ) from relics or buffs: ")))
+            FlatSPD=math.ceil(int(input("The speed from relics( flat speed without percentage) : ")))
+            print("\n\n\n")
+            Speed = math.ceil(baseSPD*((100+SPDpercent)/100)+FlatSPD)
+            print("speed : ", Speed)
+
+            BAV=10000/Speed
+            print("Base Action Value : ", BAV ,"\n\n\n")
+
+            MovePerRound=BAV/100
+            print("average move per round :" , MovePerRound)
         
         
         else:
