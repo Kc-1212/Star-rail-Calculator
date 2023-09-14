@@ -25,9 +25,9 @@ while True:
 
 
         elif choice == '2':
-
+            print("reference : https://gameloid.com/speed-in-honkai-star-rail-how-to-calculate-and-increase/\n\n ")
             baseSPD=math.ceil(int(input("The speed of your character(without relics) :")))
-            SPDpercent=math.ceil(int(input("The speed multiplyer ( percent ) from relics or buffs: ")))
+            SPDpercent=float(input("The speed multiplyer ( percent ) from relics or buffs: "))
             FlatSPD=math.ceil(int(input("The speed from relics( flat speed without percentage) : ")))
             print("\n\n\n")
             Speed = math.ceil(baseSPD*((100+SPDpercent)/100)+FlatSPD)
@@ -40,21 +40,17 @@ while True:
             print("average move per round :" , MovePerRound)
         
         elif choice == '3':
-            print("reference : https://gameloid.com/speed-in-honkai-star-rail-how-to-calculate-and-increase/\n\n ")
-            baseSPD=math.ceil(int(input("The speed of your character(without relics) :")))
-            SPDpercent=math.ceil(int(input("The speed multiplyer ( percent ) from relics or buffs: ")))
-            FlatSPD=math.ceil(int(input("The speed from relics( flat speed without percentage) : ")))
-            print("\n\n\n")
-            Speed = math.ceil(baseSPD*((100+SPDpercent)/100)+FlatSPD)
-            print("speed : ", Speed)
-
-            BAV=10000/Speed
-            print("Base Action Value : ", BAV ,"\n\n\n")
-
-            MovePerRound=BAV/100
-            print("average move per round :" , MovePerRound)
-        
-        
+            print("reference : https://honkai-star-rail.fandom.com/wiki/Energy_Regeneration_Rate\n\n ")
+            base_energy_regeneration = float(input("The regeneration rate of your character(without relics) :"))
+            energy_regeneration_rate = float(input("The regeneration rate of relics (percentage) :"))
+            real_energy_regeneration = base_energy_regeneration/100 * (1 + energy_regeneration_rate/100)
+            print("Real Energy Regeneration:", real_energy_regeneration*100)
+            maxenergy = math.ceil(int(input("your character max ult gauge : ")))
+            SkillNum=real_energy_regeneration*30
+            normalNum=real_energy_regeneration*20
+            print("to regen ult : \n",
+                  "Skill = ", maxenergy/SkillNum,
+                   "normal = ", maxenergy/normalNum) 
         else:
             print("Invalid choice. Please select a valid option (1 or 2).")
     except ZeroDivisionError:
